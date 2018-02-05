@@ -26,6 +26,10 @@ class Train extends Transport
         $this->desc = $desc;
     }
 
+
+    /**This function use to return data encoding
+     * @return string
+     */
     public function getJson()
     {
         $arrayDat =[];

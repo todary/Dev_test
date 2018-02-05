@@ -14,6 +14,9 @@ class DealWithFile
 
     private static $path = '../app/Data/db.json';
 
+    /**
+     * @param array $json_data
+     */
     public static function save(array $json_data)
     {
         if (!count($json_data)) {
@@ -34,6 +37,9 @@ class DealWithFile
         $myfile = file_put_contents(self::$path, $txt . PHP_EOL);
     }
 
+    /**
+     * @return mixed
+     */
     public static function getData()
     {
         $oldData = file_get_contents(self::$path);
