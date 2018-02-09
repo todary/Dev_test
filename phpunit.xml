@@ -10,13 +10,17 @@
          stopOnFailure="false">
     <testsuites>
         <testsuite>
-            <directory suffix=".php">./test</directory>
+            <directory suffix=".php">./tests</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist>
-            <directory>src/</directory>
+            <directory>app/</directory>
         </whitelist>
     </filter>
+
+    <logging>
+        <log type="coverage-html" target="tests/coverage" showUncoveredFiles="false"/>
+    </logging>
 </phpunit>

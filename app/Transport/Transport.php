@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: todary
- * Date: 16/10/17
- * Time: 06:02 م
- */
 
 namespace App\Transport;
 /**
@@ -19,6 +13,10 @@ abstract class  Transport
     protected $to;
     protected $desc;
 
-    public abstract  function getJson();
+    public abstract  function getTransNumber() ;
+    public abstract  function getSeatNumber();
+    public abstract  function getFrom();
+    public abstract  function getTo();
+    public abstract  function getDesc();
 
 }

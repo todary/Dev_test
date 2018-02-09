@@ -26,18 +26,58 @@ class Bus extends Transport
         $this->desc = $desc;
     }
 
-    /**This function use to return data encoding
-     * @return string
+    /**
+     * @return mixed
      */
-    public function getJson()
+    public function getTransNumber()
     {
-        $arrayDat =[];
-        $arrayDat['trans_number']=$this->trans_number;
-        $arrayDat['seat_number']=$this->seat_number;
-        $arrayDat['from']=$this->from;
-        $arrayDat['to']=$this->to;
-        $arrayDat['desc']=$this->desc;
+        return $this->trans_number;
+    }
 
-        return json_encode($arrayDat);
+    /**
+     * @return mixed
+     */
+    public function getSeatNumber()
+    {
+        return $this->seat_number;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFrom()
+    {
+        return $this->from;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTo()
+    {
+        return $this->to;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDesc()
+    {
+        return $this->desc;
+    }
+
+    /**This functio used to Display test in Display
+     * @return mixed|string
+     */
+    public function display()
+    {
+        $display = 'Take Bus from ' . $this->getFrom() . ' to ' . $this->getTo() . '. ' ;
+        if (isset($this->seat_number)){
+            $display .=$this->getSeatNumber() . ' Sit in seat' ;
+        }
+        if (isset($this->desc)){
+            $display .=$this->getDesc();
+        }
+        return $display;
     }
 }

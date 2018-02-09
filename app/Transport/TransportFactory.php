@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: todary
- * Date: 16/10/17
- * Time: 06:03 م
- */
 
 namespace App\Transport;
 
@@ -33,7 +27,7 @@ class TransportFactory
                 $flightObject = new Flight($trans_number, $seat_number, $from, $to, $gate, $desc);
                 return $flightObject;
             default:
-                throw new \InvalidArgumentException("$type is not a valid vehicle");
+                throw new \InvalidArgumentException("$type is not a valid Transport");
         }
     }
 
