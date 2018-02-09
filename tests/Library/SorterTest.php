@@ -84,46 +84,4 @@ class SorterTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($arraySorted, $sorterObject->makeSorting('Madrid', $array));
     }
 
-
-    public function testSort()
-    {
-
-        $stub = $this->getMockBuilder(Sorter::class)
-            ->disableOriginalConstructor()
-            ->disableOriginalClone()
-            ->disableArgumentCloning()
-            ->disallowMockingUnknownTypes()
-            ->getMock();
-
-        // Configure the stub.
-        $stub->method('doSomething')
-            ->willReturn('foo');
-
-
-        $mockCollection = Mockery::mock(Collection::class);
-        $mockCollection->shouldReceive('get_collection_ids')->once()->andReturn([1, 2, 3, 4, 5, 6]);
-
-        $array = [
-            'Stockholm' => new Flight('SK522', '7B', 'Stockholm', 'GFK', '22', 'Baggage will we automatically transferred from your last leg'),
-            'Barcelona' => new Bus('', '', 'Barcelona', 'Gerona Airport', '', ''),
-            'Madrid' => new Train('78A', '45B', 'Madrid', 'Barcelona', ''),
-            'Gerona Airport' => new Flight('SK544', '3A', 'Gerona Airport', 'Stockholm', '45G', ''),
-        ];
-
-        $arraySorted = [
-            new Train('78A', '45B', 'Madrid', 'Barcelona', ''),
-            new Bus('', '', 'Barcelona', 'Gerona Airport', '', ''),
-            new Flight('SK544', '3A', 'Gerona Airport', 'Stockholm', '45G', ''),
-            new Flight('SK522', '7B', 'Stockholm', 'GFK', '22', 'Baggage will we automatically transferred from your last leg'),
-        ];
-
-        $sorterObject = new Sorter();
-        $this->assertEquals($arraySorted, $sorterObject->makeSorting('Madrid', $array));
-    }
-
-
-
-
-
-
 }

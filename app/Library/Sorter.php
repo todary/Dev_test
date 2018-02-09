@@ -3,7 +3,7 @@
 
 namespace App\Library;
 
-class Sorter implements SortInterface
+class Sorter
 {
 
 
